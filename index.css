@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(218, 189, 221);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.name {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.schools-attended, .employers {
+    margin-left: -40px;
+}
+
+.company {
+    margin-bottom: 35px;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+.company > p {
+    font-weight: normal;
+}
+
+span {
+    font-weight: bold;
+}

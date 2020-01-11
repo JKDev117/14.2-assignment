@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello world</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--root element-->
+    <!--the DOM element we insert our app into-->
+    <div id="application-root"></div>
+
+    <!-- Babel enables JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!--script element for the React library code-->
+    <!--react.development.js file is the "non-specific" part which creates the global variable 'React'-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    
+
+    <!--script element for the React library code-->
+    <!--the React-DOM part of the library which allows us to use React when building webpages-->
+    <!-- The React-DOM part contains methods that live on the global variable ReactDOM which we can use to connect our React code to the DOM -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    
+    <!--script element we can write our JS code in-->
+    <script type="text/babel">
+
+        const appRoot = document.querySelector('#application-root');
+
+        function App(props) {
+            console.log(props);
+            return (
+                <div>
+                    <header>
+                        <h1>{props.name} Resume</h1>
+                    </header>
+    
+                    <main>
+                        <section class="contact-info">
+                            <img src="https://thumbs.dreamstime.com/t/business-woman-wearing-black-suit-isolated-white-contains-eps-high-resolution-jpeg-41876263.jpg" alt="profile picture"/>
+                            <h2>Contact Info:</h2>
+                            <p class="name">{props.name}</p>
+                            <address>
+                                <p>123 Main St.<br/>
+                                City, State 12345</p>
+                                <a href="mailto:sally@student.com">sally@student.com</a><br/>
+                                <a href="tel:+17705532367">(770) 553-2367</a>   
+                            </address>
+                        </section>
+
+                        <section class="education">
+                            <h2>Education:</h2>
+                            <ul class="schools-attended">
+                                <li><h3>Student University</h3></li>
+                            </ul>
+                        </section>
+
+                        <section class="employment">
+                            <h2>Employment History:</h2>
+                            <ul class="employers">
+                                <li class="company">
+                                    <h3>Company XYZ</h3>
+                                    <p>[July 2019 - Current]</p>
+                                    <span>Marketing Assistant</span>
+                                    <p><span>Job Description:</span> Conduct market research and analyze consumer rating reports.</p>
+                                </li>
+                            
+                                <li class="company">
+                                    <h3>Company ABC</h3>
+                                    <p>[January 2019 - June 2019]</p>
+                                    <span>Intern</span>
+                                    <p><span>Job Description:</span> Performed administrative tasks to help prepare reports and presentations.</p>
+                                </li>
+                            </ul>
+                        </section>
+                    </main>
+                </div>
+            );
+        };
+
+        //ReactDOM.render(element, container);
+        //element is our React app, this will become the contents of the container
+        //container is the DOM element we insert our app into (e.g. "#application-root")
+        ReactDOM.render(
+            <App name="Sally Student"/>,
+            appRoot
+        );
+    </script>
+
+</body>
+
+</html>
